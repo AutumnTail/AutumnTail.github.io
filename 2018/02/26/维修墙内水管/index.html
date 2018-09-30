@@ -192,11 +192,11 @@
         
             <div class="article-tags tags">
                 
-                    <a href="/tags/木工/"><i class="fa fa-tag fa-fw" aria-hidden="true"></i>&nbsp;木工</a>
-                
                     <a href="/tags/水/"><i class="fa fa-tag fa-fw" aria-hidden="true"></i>&nbsp;水</a>
                 
                     <a href="/tags/建筑/"><i class="fa fa-tag fa-fw" aria-hidden="true"></i>&nbsp;建筑</a>
+                
+                    <a href="/tags/木工/"><i class="fa fa-tag fa-fw" aria-hidden="true"></i>&nbsp;木工</a>
                 
             </div>
         
@@ -289,6 +289,16 @@
 
                 
 
+                
+                    
+                        <h4><i class="fa fa-comments fa-fw" aria-hidden="true"></i>&nbsp;Valine评论</h4>
+                        <section id="comments">
+                            <div id="valine_container" class="valine_thread">
+                                </i><i class="fa fa-spinner fa-spin fa-fw"></i>
+                            </div>
+                        </section>
+                        <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+                    
                 
             
 
@@ -498,9 +508,9 @@
     <script>
         var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
         var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
-        var ALGOLIA_API_KEY = "";
-        var ALGOLIA_APP_ID = "";
-        var ALGOLIA_INDEX_NAME = "";
+        var ALGOLIA_API_KEY = "1be0f5a09618110892186dba91613fd6";
+        var ALGOLIA_APP_ID = "6QFOOD8EOR";
+        var ALGOLIA_INDEX_NAME = "search";
         var AZURE_SERVICE_NAME = "";
         var AZURE_INDEX_NAME = "";
         var AZURE_QUERY_KEY = "";
@@ -516,6 +526,30 @@
 
     
     
+    
+        
+            <script>
+            var GUEST_INFO = ['nick','mail','link'];
+            var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+                return GUEST_INFO.indexOf(item) > -1
+            });
+            var notify = 'false' == true;
+            var verify = 'false' == true;
+            var valine = new Valine();
+            valine.init({
+                el: '#valine_container',
+                notify: notify,
+                verify: verify,
+                guest_info: guest_info,
+                appId: "gCJbBBdtAgP8I77vcMrbq3zY-MdYXbMMI",
+                appKey: "qybpLw2rpeFwRHbUFb8dciYs",
+                placeholder: "欢迎留下你的脚印",
+                pageSize:'10',
+                avatar:'mp',
+                lang:'zh-cn'
+            })
+            </script>
+        
     
 
 

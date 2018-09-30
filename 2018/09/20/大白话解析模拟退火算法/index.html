@@ -167,8 +167,7 @@
 <p>爬山算法实现很简单，其主要缺点是会陷入局部最优解，而不一定能搜索到全局最优解。如图1所示：假设C点为当前解，爬山算法搜索到A点这个局部最优解就会停止搜索，因为在A点无论向那个方向小幅度移动都不能得到更优的解。</p>
 <p><img src="https://pic002.cnblogs.com/images/2010/63234/2010122016525713.png" alt="图1"> </p>
 <h2 id="二-模拟退火-SA-Simulated-Annealing-思想"><a href="#二-模拟退火-SA-Simulated-Annealing-思想" class="headerlink" title="二. 模拟退火(SA,Simulated Annealing)思想"></a>二. 模拟退火(SA,Simulated Annealing)思想</h2><p>爬山法是完完全全的贪心法，每次都鼠目寸光的选择一个当前最优解，因此只能搜索到局部的最优值。模拟退火其实也是一种贪心算法，但是它的搜索过程引入了随机因素。模拟退火算法<strong>以一定的概率</strong>来接受一个比当前解要差的解，因此<strong>有可能</strong>会跳出这个局部的最优解，达到全局的最优解。以图1为例，模拟退火算法在搜索到局部最优解A后，会<strong>以一定的概率</strong>接受到E的移动。也许经过几次这样的不是局部最优的移动后会到达D点，于是就跳出了局部最大值A。</p>
-<p>模拟退火算法描述：</p>
-<p>若J( Y(i+1) )&gt;= J( Y(i) )  (即移动后得到更优解)，则总是接受该移动</p>
+<h3 id="模拟退火算法描述："><a href="#模拟退火算法描述：" class="headerlink" title="模拟退火算法描述："></a>模拟退火算法描述：</h3><p>若J( Y(i+1) )&gt;= J( Y(i) )  (即移动后得到更优解)，则总是接受该移动</p>
 <p>若J( Y(i+1) )&lt; J( Y(i) )  (即移动后的解比当前解要差)，则<strong>以一定的概率接受移动，而且这个概率随着时间推移逐渐降低（逐渐降低才能趋向稳定）</strong></p>
 <p>这里的“一定的概率”的计算参考了金属冶炼的退火过程，这也是模拟退火算法名称的由来。</p>
 <p>根据热力学的原理，在温度为T时，出现能量差为dE的降温的概率为P(dE)，表示为：</p>
@@ -177,8 +176,8 @@
 <p>随着温度T的降低，P(dE)会逐渐降低。</p>
 <p>我们将一次向较差解的移动看做一次温度跳变过程，我们以概率P(dE)来接受这样的移动。</p>
 <p>关于爬山算法与模拟退火，有一个有趣的比喻：</p>
-<p>爬山算法：兔子朝着比现在高的地方跳去。它找到了不远处的最高山峰。但是这座山不一定是珠穆朗玛峰。这就是爬山算法，它不能保证局部最优值就是全局最优值。</p>
-<p>模拟退火：兔子喝醉了。它随机地跳了很长时间。这期间，它可能走向高处，也可能踏入平地。但是，它渐渐清醒了并朝最高方向跳去。这就是模拟退火。</p>
+<p><strong>爬山算法</strong>：兔子朝着比现在高的地方跳去。它找到了不远处的最高山峰。但是这座山不一定是珠穆朗玛峰。这就是爬山算法，它不能保证局部最优值就是全局最优值。</p>
+<p><strong>模拟退火</strong>：兔子喝醉了。它随机地跳了很长时间。这期间，它可能走向高处，也可能踏入平地。但是，它渐渐清醒了并朝最高方向跳去。这就是模拟退火。</p>
 <p>下面给出模拟退火的伪代码表示。</p>
 <h2 id="三-模拟退火算法伪代码"><a href="#三-模拟退火算法伪代码" class="headerlink" title="三. 模拟退火算法伪代码"></a>三. 模拟退火算法伪代码</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">* J(y)：在状态y时的评价函数值</span><br><span class="line">* Y(i)：表示当前状态</span><br><span class="line">* Y(i+1)：表示新的状态</span><br><span class="line">* r： 用于控制降温的快慢</span><br><span class="line">* T： 系统的温度，系统初始应该要处于一个高温的状态</span><br><span class="line">* T_min ：温度的下限，若温度T达到T_min，则停止搜索</span><br><span class="line">*/</span><br><span class="line">while( T &gt; T_min )</span><br><span class="line">&#123;</span><br><span class="line">　　dE = J( Y(i+1) ) - J( Y(i) ) ; </span><br><span class="line"></span><br><span class="line">　　if ( dE &gt;=0 ) &#123;//表达移动后得到更优解，则总是接受移动</span><br><span class="line">		Y(i+1) = Y(i) ; //接受从Y(i)到Y(i+1)的移动</span><br><span class="line">	&#125; else &#123;</span><br><span class="line">        // 函数exp( dE/T )的取值范围是(0,1) ，dE/T越大，则exp( dE/T )也</span><br><span class="line">        if ( exp( dE/T ) &gt; random( 0 , 1 ) )</span><br><span class="line">        	Y(i+1) = Y(i) ; //接受从Y(i)到Y(i+1)的移动</span><br><span class="line">　　&#125;</span><br><span class="line">　　T = r * T ; //降温退火 ，0&lt;r&lt;1 。r越大，降温越慢；r越小，降温越快</span><br><span class="line">　　/*</span><br><span class="line">　　* 若r过大，则搜索到全局最优解的可能会较高，但搜索的过程也就较长。若r过小，则搜索的过程会很快，但最终可能会达到一个局部最优值</span><br><span class="line">　　*/</span><br><span class="line">　　i ++ ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="四-使用模拟退火算法解决旅行商问题"><a href="#四-使用模拟退火算法解决旅行商问题" class="headerlink" title="四. 使用模拟退火算法解决旅行商问题"></a>四. 使用模拟退火算法解决旅行商问题</h2><p>旅行商问题 ( TSP , Traveling Salesman Problem ) ：有N个城市，要求从其中某个问题出发，唯一遍历所有城市，再回到出发的城市，求最短的路线。</p>
@@ -230,11 +229,11 @@
                             
                                 <h6 class="tags">
                                     
-                                        <i class="fa fa-tag fa-fw"></i>木工
-                                    
                                         <i class="fa fa-tag fa-fw"></i>水
                                     
                                         <i class="fa fa-tag fa-fw"></i>建筑
+                                    
+                                        <i class="fa fa-tag fa-fw"></i>木工
                                     
                                 </h6>
                             
@@ -285,6 +284,16 @@
 
                 
 
+                
+                    
+                        <h4><i class="fa fa-comments fa-fw" aria-hidden="true"></i>&nbsp;Valine评论</h4>
+                        <section id="comments">
+                            <div id="valine_container" class="valine_thread">
+                                </i><i class="fa fa-spinner fa-spin fa-fw"></i>
+                            </div>
+                        </section>
+                        <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+                    
                 
             
 
@@ -410,7 +419,7 @@
     <section class='m_widget toc-wrapper'>
         <div class="header"><i class="fa fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;目录</div>
         <div class='content'>
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一-爬山算法-Hill-Climbing"><span class="toc-text">一. 爬山算法 ( Hill Climbing )</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二-模拟退火-SA-Simulated-Annealing-思想"><span class="toc-text">二. 模拟退火(SA,Simulated Annealing)思想</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三-模拟退火算法伪代码"><span class="toc-text">三. 模拟退火算法伪代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四-使用模拟退火算法解决旅行商问题"><span class="toc-text">四. 使用模拟退火算法解决旅行商问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五-算法评价"><span class="toc-text">五. 算法评价</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一-爬山算法-Hill-Climbing"><span class="toc-text">一. 爬山算法 ( Hill Climbing )</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二-模拟退火-SA-Simulated-Annealing-思想"><span class="toc-text">二. 模拟退火(SA,Simulated Annealing)思想</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#模拟退火算法描述："><span class="toc-text">模拟退火算法描述：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三-模拟退火算法伪代码"><span class="toc-text">三. 模拟退火算法伪代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四-使用模拟退火算法解决旅行商问题"><span class="toc-text">四. 使用模拟退火算法解决旅行商问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#五-算法评价"><span class="toc-text">五. 算法评价</span></a></li></ol>
         </div>
     </section>
 
@@ -494,9 +503,9 @@
     <script>
         var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
         var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
-        var ALGOLIA_API_KEY = "";
-        var ALGOLIA_APP_ID = "";
-        var ALGOLIA_INDEX_NAME = "";
+        var ALGOLIA_API_KEY = "1be0f5a09618110892186dba91613fd6";
+        var ALGOLIA_APP_ID = "6QFOOD8EOR";
+        var ALGOLIA_INDEX_NAME = "search";
         var AZURE_SERVICE_NAME = "";
         var AZURE_INDEX_NAME = "";
         var AZURE_QUERY_KEY = "";
@@ -512,6 +521,30 @@
 
     
     
+    
+        
+            <script>
+            var GUEST_INFO = ['nick','mail','link'];
+            var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+                return GUEST_INFO.indexOf(item) > -1
+            });
+            var notify = 'false' == true;
+            var verify = 'false' == true;
+            var valine = new Valine();
+            valine.init({
+                el: '#valine_container',
+                notify: notify,
+                verify: verify,
+                guest_info: guest_info,
+                appId: "gCJbBBdtAgP8I77vcMrbq3zY-MdYXbMMI",
+                appKey: "qybpLw2rpeFwRHbUFb8dciYs",
+                placeholder: "欢迎留下你的脚印",
+                pageSize:'10',
+                avatar:'mp',
+                lang:'zh-cn'
+            })
+            </script>
+        
     
 
 
