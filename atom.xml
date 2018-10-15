@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://autumntail.github.io/"/>
-  <updated>2018-09-21T05:00:21.075Z</updated>
+  <updated>2018-10-15T05:02:20.191Z</updated>
   <id>https://autumntail.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Angular 7 新特性</title>
+    <link href="https://autumntail.github.io/2018/10/14/Angular-7-%E6%96%B0%E7%89%B9%E6%80%A7/"/>
+    <id>https://autumntail.github.io/2018/10/14/Angular-7-新特性/</id>
+    <published>2018-10-14T13:56:46.000Z</published>
+    <updated>2018-10-15T05:02:20.191Z</updated>
+    
+    <content type="html"><![CDATA[<p>Angular 7已经进入RC了，马上就要release了。都有哪些值得期待的新特性呢？</p><a id="more"></a><ol><li><p>通过自动添加或移除“Reflect　Metadata”（反射元数据可参考<a href="https://www.jianshu.com/p/653bce04db0b），可以使程序更小，性能更好。" target="_blank" rel="noopener">https://www.jianshu.com/p/653bce04db0b），可以使程序更小，性能更好。</a></p></li><li><p>由于Angular默认为前端路由，单页面应用，因此程序首次加载后偏慢。因此Angular 7默认编译后的主程序超过2MB会警告，超过5MB会报错。</p></li><li><p>CLI功能增强，更多交互，帮助用户利用CLI创建合适的组件。</p></li><li><p>支持TypeScript 2.9+。</p></li><li><p>Material Design 2018动态加载，提升性能。</p></li></ol><p>… …</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Angular 7已经进入RC了，马上就要release了。都有哪些值得期待的新特性呢？&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="计算机技术" scheme="https://autumntail.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="前端" scheme="https://autumntail.github.io/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+      <category term="Angular" scheme="https://autumntail.github.io/tags/Angular/"/>
+    
+  </entry>
   
   <entry>
     <title>大白话解析模拟退火算法</title>
@@ -59,11 +83,11 @@
       <category term="生活DIY" scheme="https://autumntail.github.io/categories/%E7%94%9F%E6%B4%BBDIY/"/>
     
     
+      <category term="木工" scheme="https://autumntail.github.io/tags/%E6%9C%A8%E5%B7%A5/"/>
+    
       <category term="水" scheme="https://autumntail.github.io/tags/%E6%B0%B4/"/>
     
       <category term="建筑" scheme="https://autumntail.github.io/tags/%E5%BB%BA%E7%AD%91/"/>
-    
-      <category term="木工" scheme="https://autumntail.github.io/tags/%E6%9C%A8%E5%B7%A5/"/>
     
   </entry>
   
@@ -388,11 +412,11 @@
       <category term="生活DIY" scheme="https://autumntail.github.io/categories/%E7%94%9F%E6%B4%BBDIY/"/>
     
     
+      <category term="木工" scheme="https://autumntail.github.io/tags/%E6%9C%A8%E5%B7%A5/"/>
+    
       <category term="水" scheme="https://autumntail.github.io/tags/%E6%B0%B4/"/>
     
       <category term="建筑" scheme="https://autumntail.github.io/tags/%E5%BB%BA%E7%AD%91/"/>
-    
-      <category term="木工" scheme="https://autumntail.github.io/tags/%E6%9C%A8%E5%B7%A5/"/>
     
   </entry>
   
@@ -438,9 +462,9 @@
       <category term="生活DIY" scheme="https://autumntail.github.io/categories/%E7%94%9F%E6%B4%BBDIY/"/>
     
     
-      <category term="建筑" scheme="https://autumntail.github.io/tags/%E5%BB%BA%E7%AD%91/"/>
-    
       <category term="木工" scheme="https://autumntail.github.io/tags/%E6%9C%A8%E5%B7%A5/"/>
+    
+      <category term="建筑" scheme="https://autumntail.github.io/tags/%E5%BB%BA%E7%AD%91/"/>
     
       <category term="电" scheme="https://autumntail.github.io/tags/%E7%94%B5/"/>
     
