@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   
-  <title>选择安装行车记录仪 | 人似秋鸿来有信，事如春梦了无痕</title>
+  <title>Archives: 2019/4 | 人似秋鸿来有信，事如春梦了无痕</title>
   <meta name="description" content="" />
   <meta name="keywords" content="" />
   <meta name="HandheldFriendly" content="True" />
@@ -125,167 +125,64 @@
     <div class="l_body">
     <div class='container clearfix'>
         <div class='l_main'>
-            <article id="post-选择安装行车记录仪" class="post white-box article-type-post" itemscope itemprop="blogPost">
-    <section class='meta'>
-        <h1 class="title">
             
-                选择安装行车记录仪
-            
-        </h1>
+	
+    <script>
+        window.subData= { title:'year : 2019.4'}
+    </script>
+
+
+<section class="post-list">
+    
+    
+        <div class='post-wrapper'>
+            <article class="post reveal ">
+    <section class="meta">
+        <h2 class="title">
+            <a href="/2019/04/22/hadoop-ha-cluster/">
+                
+                    Hadoop 3.1.2 + Zookeeper 3.4.14 + Spark 2.4.1 + HBase 2.0.5 + Phoenix 5.0.0 高可用集群部署
+                
+            </a>
+        </h2>
         <time>
-            2017-04-07&nbsp;&nbsp;
-            <i class="fa fa-eye fa-fw" aria-hidden="true"></i>&nbsp;<span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+            2019-04-22
         </time>
         
     
     <div class='cats'>
-        <a href="/categories/生活DIY/">生活DIY</a>
+        <a href="/categories/计算机技术/">计算机技术</a>
     </div>
 
 
     </section>
 
     <section class="article typo">
-
-        <div class="article-entry" itemprop="articleBody">
-            <p>休斯敦的警察们每天都忙碌着应付杀人放火的大案要案，对于车子之间你蹭我，我磕你，多半是“俺们公仆都很忙，这种小case你们自己解决得了“。所以，安装一个可靠的行车记录仪，留下现场的证据，对于后面的保险维修，防止被人讹诈，还是很有用的。</p>
-<a id="more"></a>
-<p>行车记录仪经过几年的大发展，价格已经是非常亲民了。俺装第一个BlackVue的时候，要200多一个。而现在，一个山寨2K分辨率，60Hz录像频率的机器，也不过100块左右，什么GPS啊，G sensor啊，换道提醒，防撞提醒之类的听起来眼花缭乱的feature，一应俱全。真是”只有想不到的，没有寨厂们做不出来的”。</p>
-<p>面对这么眼花缭乱的产品，选啥好呢？其实虽然品牌很多，但内部的主控芯片，就那么几家做，安霸跟联咏的比较多。休斯敦的天气比较热，选择的时候尽量避开用电池供电的。俺曾经买过两个网上很多人推崇的Mini 0806，结果很不稳定，它有个很脑残的设计：外接电源只是负责给电池充电，系统工作则从电池取电。这带来一个很严重的后果，就是一旦电池故障，机器就废了。好的设计应该是外接电源来供电，而电池或者电容起到备用跟缓冲的作用。最后，不要买山寨厂家推出的最新产品。无论这个产品吹得多么的天花乱坠。尽量选择那些已经上市一段时间，经过市场反馈检验过的产品。</p>
-<p>好，选好了一款记录仪，接下来就是安装了。很多人可能就直接接到车上的12V点烟口或者USB口上。不过，有些车型（比如福特家的）车上的点烟口在车熄火后仍然是有电的，如果忘记关掉接在上面的行车记录仪，可能会把电池耗光。又或者，有些人希望可以把线隐藏起来，让车内部显得干净整洁一些。下面俺就说说这种情况怎么接线。</p>
-<p>这时候，可以选择把线接到passenger座位下面的fuse box里。这需要一个Add A Circuit，一个fuse，或者还需要一个12V的Adaptor。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/5067306-9e9851ec2aff2bc5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="materials.png"></p>
-<p>用万用表或者电笔找一个可以用的停车断电的fuse，把供电线的正极连到Add A Circuit上，把记录仪线路的fuse跟原来车上对应的fuse都装到Add A Circuit上。记录仪的负极线接到车体的金属上。这样可以在选定的fuse位置加上一个并联电路，既不影响原来线路的工作，又给记录仪加了一个保护fuse。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/5067306-8baabeafb4b076f2.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="add_circuit_fuse.jpg"></p>
-<p>记录仪的走线，可以这样。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/5067306-83e9a5d6670e7b93.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="blackview-install.jpg"></p>
-<p>也可以直接从A柱下来，从车门边上的seal条里进入下面的fuse box。俺抛砖引玉，大家因车制宜。</p>
-
-        </div>
-
+        <p>本文记录梳理一下手动布署hadoop集群具体步骤，在相互兼容的基础上，选择了目前为止各个组件的最新版。所以请不要询问为什么是这几个版本，因为作者已经花了大量的时间尝试过。</p>
         
-            <div class="article-tags tags">
-                
-                    <a href="/tags/车/"><i class="fa fa-tag fa-fw" aria-hidden="true"></i>&nbsp;车</a>
-                
-                    <a href="/tags/电/"><i class="fa fa-tag fa-fw" aria-hidden="true"></i>&nbsp;电</a>
-                
+            <div class="readmore">
+                <a href="/2019/04/22/hadoop-ha-cluster/" class="flat-box">READ MORE</a>
             </div>
         
 
         
-            <div class="prev-next">
+            <div class="full-width auto-padding tags">
                 
-                    <section class="prev" >
-                        <span class="art-item-left">
-                            <h6><i class="fa fa-chevron-left" aria-hidden="true"></i>&nbsp;上一篇</h6>
-                            <h4>
-                                <a href="/2017/04/19/自己装gutter/" rel="prev" title="自己装gutter">
-                                  
-                                      自己装gutter
-                                  
-                                </a>
-                            </h4>
-                            
-                                <h6 class="tags">
-                                    
-                                        <i class="fa fa-tag fa-fw"></i>水
-                                    
-                                        <i class="fa fa-tag fa-fw"></i>建筑
-                                    
-                                </h6>
-                            
-                        </span>
-                    </section>
+                    <a href="/tags/BigData/"><i class="fa fa-tag fa-fw"></i>&nbsp;BigData</a>
                 
-                
-                    <section class="next">
-                        <span class="art-item-right" aria-hidden="true">
-                            <h6>下一篇&nbsp;<i class="fa fa-chevron-right" aria-hidden="true"></i></h6>
-                            <h4>
-                                <a href="/2017/04/03/安装厨房纯净水系统/" rel="prev" title="安装厨房纯净水系统">
-                                    
-                                        安装厨房纯净水系统
-                                    
-                                </a>
-                            </h4>
-                            
-                                <h6 class="tags">
-                                    
-                                        <i class="fa fa-tag fa-fw"></i>水
-                                    
-                                </h6>
-                            
-                        </span>
-                    </section>
+                    <a href="/tags/Hadoop/"><i class="fa fa-tag fa-fw"></i>&nbsp;Hadoop</a>
                 
             </div>
         
-
     </section>
-
 </article>
 
-<br>
-
-<!-- 显示推荐文章和评论 -->
-
-    <article class="post white-box comments">
-        <section class="article typo">
-
-            
-                
-
-    <div class="recommended_posts">
-        <h4><i class="fa fa-bookmark fa-fw" aria-hidden="true"></i>&nbsp;你可能感兴趣的文章</h4>
-        <ul>
-            
-                <li><a href="https://autumntail.github.io/2017/04/26/修条小路通后院/">修条小路通后院</a></li>
-            
-                <li><a href="https://autumntail.github.io/2017/04/19/自己装gutter/">自己装gutter</a></li>
-            
-                <li><a href="https://autumntail.github.io/2017/04/03/安装厨房纯净水系统/">安装厨房纯净水系统</a></li>
-            
-                <li><a href="https://autumntail.github.io/2017/03/24/更换浴池排水的Stopper/">更换浴池排水的Stopper</a></li>
-            
-                <li><a href="https://autumntail.github.io/2017/03/21/Storm-Door安装DIY/">Storm Door安装DIY</a></li>
-            
-        </ul>
-    </div>
-    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+        </div>
+    
+</section>
 
 
-            
 
-            
-
-                
-
-                
-
-                
-                    
-                        <h4><i class="fa fa-comments fa-fw" aria-hidden="true"></i>&nbsp;Valine评论</h4>
-                        <section id="comments">
-                            <div id="valine_container" class="valine_thread">
-                                </i><i class="fa fa-spinner fa-spin fa-fw"></i>
-                            </div>
-                        </section>
-                        <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-                    
-                
-            
-
-        </section>
-    </article>
-
-
-<script>
-    window.subData = {
-        title: '选择安装行车记录仪',
-        tools: true
-    }
-</script>
 
 
         </div>
@@ -475,34 +372,6 @@
 <script src="/js/search.js"></script>
 <script src="/js/app.js"></script>
 
-
-    
-    
-    
-        
-            <script>
-            var GUEST_INFO = ['nick','mail','link'];
-            var guest_info = 'nick,mail,link'.split(',').filter(function(item){
-                return GUEST_INFO.indexOf(item) > -1
-            });
-            var notify = 'false' == true;
-            var verify = 'false' == true;
-            var valine = new Valine();
-            valine.init({
-                el: '#valine_container',
-                notify: notify,
-                verify: verify,
-                guest_info: guest_info,
-                appId: "gCJbBBdtAgP8I77vcMrbq3zY-MdYXbMMI",
-                appKey: "qybpLw2rpeFwRHbUFb8dciYs",
-                placeholder: "欢迎留下你的脚印",
-                pageSize:'10',
-                avatar:'mp',
-                lang:'zh-cn'
-            })
-            </script>
-        
-    
 
 
     <script>setLoadingBarProgress(100);</script>
